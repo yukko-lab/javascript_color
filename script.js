@@ -3,6 +3,8 @@
 //定数の宣言
 const color = document.getElementById('myColor');
 const text = document.getElementById('bodyText');
+const neko = document.getElementById('neko');
+
 //↓
 //定数とは「箱」のようなもので、文字列、数値、式などを入れておくことができます。定数を使うことで、同じコードを何度も書かずに使い回したり、コードをより見やすく整理できます。
 //constの後ろに書かれているのが、定数の名前（箱につけるラベルのようなもの）です。ここでは、カラーピッカーを color、カラーピッカーの上に書かれているテキストを、text という名前にしています。
@@ -59,7 +61,20 @@ color.addEventListener('input', changeColor);
 
 function changeColor(){
     // カラーコードを表示
-      text.textContent = color.value;
+      //text.textContent = color.value;
       // 背景色を変更
   document.body.style.backgroundColor = color.value;
+
+  neko.style.color = color.value;
+
+  if (color.value === '#ffffff') {
+    text.textContent = 'コード：' + color.value + '(white)';
+  } else if (color.value === '#000000') {
+    text.textContent = 'コード：' + color.value + '(black)';
+  }else {
+    text.textContent = 'コード：' + color.value;
     }
+
+  }
+
+    
